@@ -38,6 +38,5 @@ function clearboard(){
         m = "n" + arr[i];
         document.getElementById(m).innerHTML="";
     }
-    myFunction();
     v=0;
 }
