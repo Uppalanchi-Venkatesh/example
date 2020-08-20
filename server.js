@@ -4,8 +4,13 @@ var app = express();
 
 app.use(express.static(__dirname+'/FrontEnd'));
 
+
 app.get('/', function(req, res){
     res.sendFile(__dirname+"/FrontEnd/HTML/index.html");
+})
+
+app.get('/clock', function(req, res){
+    res.sendFile(__dirname+"/FrontEnd/HTML/clock.html");
 })
 
 app.get('/tambola', function(req, res){
@@ -16,7 +21,7 @@ app.get('/second', function(req, res){
     res.sendFile(__dirname+"/FrontEnd/HTML/second.html");
 })
 
-var port= process.env.PORT  || 5000;
+var port= process.env.PORT  || 3000;
 
 app.listen(port, function(){
     console.log("Site Running on http://localhost:"+port);
