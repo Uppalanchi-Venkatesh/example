@@ -1,6 +1,6 @@
 var model=require("../Model/RegisterUserModel");
 module.exports={
-    create: function(userObj){
+    createUsers: function(userObj){
         var registerUser=new model(userObj);
         registerUser.save();
     },

@@ -1,6 +1,6 @@
 var model=require("../Model/LoginUserModel");
 module.exports={
-    create: function(userObj){
+    createUsers: function(userObj){
         var loginUser=new model(userObj);
         loginUser.save();
     },

@@ -27,8 +27,8 @@ app.get('/register', function(req, res){
 
 app.post('/registeruser',function(req,res){
     RegisterUserLib.create(req.body);
-    res.send("user registered sucessfully");
-    //res.redirect('/dashboard');
+    //res.send("user registered sucessfully");
+    res.redirect('/login');
 })
 
 app.get('/getregisteruser',function(req,res){
@@ -56,8 +56,12 @@ app.get('/getloginuser',function(req,res){
 })
 
 app.post('/create', function(req,res){
-    userlib.create(req.body);
-    res.send("user created sucessfully");
+    userlib.create(function(err){
+        if(err)
+            res.json(err);
+        else
+            req.body;
+    });
 })
 
 app.get('/database', function(req, res){

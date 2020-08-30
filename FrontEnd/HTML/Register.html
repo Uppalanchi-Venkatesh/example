@@ -30,17 +30,17 @@
         <form class="myform" action="/registeruser" method="POST">
           <div class="form-group">
             <label for="username">User Name</label>
-            <input type="username" class="form-control" name="username">
+            <input type="username" required class="form-control" name="username">
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" name="email">
+            <input type="email" required class="form-control" name="email">
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" class="form-control" name="password"> 
+            <input type="password" required class="form-control" name="password"> 
           </div>
-          <button type="submit" class="btn btn-primary">Register</button>
+          <button type="submit" class="btn btn-primary" href="/login">Register</button>
         </form>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
