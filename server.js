@@ -10,7 +10,7 @@ db.connect();
 app.use(express.static(__dirname+'/FrontEnd'));
 
 app.get('/', function(req, res){
-    res.sendFile(__dirname+"/FrontEnd/HTML/Bootstrap.html");
+    res.sendFile(__dirname+"/FrontEnd/HTML/Homepage.html");
 })
 
 app.get('/login', function(req, res){
@@ -26,7 +26,7 @@ app.get('/register', function(req, res){
 })
 
 app.post('/registeruser',function(req,res){
-    RegisterUserLib.create(req.body);
+    RegisterUserLib.createUsers(req.body);
     //res.send("user registered sucessfully");
     res.redirect('/login');
 })
@@ -41,7 +41,7 @@ app.get('/getregisteruser',function(req,res){
 })
 
 app.post('/loginuser',function(req,res){
-    LoginUserLib.create(req.body);
+    LoginUserLib.createUsers(req.body);
     //res.send("user registered sucessfully");
     res.redirect('/dashboard');
 })
