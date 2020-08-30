@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>LoginPage</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/CSS/Bootstrap.css"/>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/login" style="color: red;">Goto login</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/register">Sign Up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/dashboard">Dashboard</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <h1 style="text-align: center; margin-top: 30;">Login</h1>
+        <form class="myform" action="/loginuser" method="POST">
+            <div class="form-group">
+              <label for="username">User Name</label>
+              <input type="username" class="form-control" name="username">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password">
+            </div>
+            <button type="submit" class="btn btn-primary" href="\dashboard">Login</button>
+            <p style="margin-top: 10;"><b>New User?</b>  <a href="/register">click here</a></p>
+          </form>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script src="/JS/Bootstrap.js"></script>
+    </body>
+</html>

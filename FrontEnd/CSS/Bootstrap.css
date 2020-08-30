@@ -1,0 +1,15 @@
+.myform{
+    height: 300;
+    width: 600;
+    margin-top: 100;
+    margin-left: 400;
+}
+
+.centered-form{
+	margin-top: 200px;
+}
+
+.centered-form .panel{
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
