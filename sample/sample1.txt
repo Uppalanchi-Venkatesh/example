@@ -1,7 +1,0 @@
-body{
-    font-family:  'Calibri';
-}
-
-.container{
-    border: 2px solid black;
-}
