@@ -11,6 +11,22 @@ db.connect();
 app.use(express.static(__dirname+'/FrontEnd'));
 
 app.get('/', function(req, res){
+    res.sendFile(__dirname+"/FrontEnd/HTML/index.html");
+})
+
+app.get('/resume', function(req, res){
+    res.sendFile(__dirname+"/FrontEnd/HTML/Resume.html");
+})
+
+app.get('/clock', function(req, res){
+    res.sendFile(__dirname+"/FrontEnd/HTML/clock.html");
+})
+
+app.get('/tambola', function(req, res){
+    res.sendFile(__dirname+"/FrontEnd/HTML/tambola.html");
+})
+
+app.get('/homepage', function(req, res){
     res.sendFile(__dirname+"/FrontEnd/HTML/Homepage.html");
 })
 
@@ -74,24 +90,9 @@ app.get('/database', function(req, res){
     });
 })
 
-/*app.get('/', function(req, res){
-    res.sendFile(__dirname+"/FrontEnd/HTML/index.html");
-})
-
-app.get('/clock', function(req, res){
-    res.sendFile(__dirname+"/FrontEnd/HTML/clock.html");
-})
-
-app.get('/tambola', function(req, res){
-    res.sendFile(__dirname+"/FrontEnd/HTML/tambola.html");
-})
-
-app.get('/second', function(req, res){
-    res.sendFile(__dirname+"/FrontEnd/HTML/second.html");
-})*/
 //db.disconnect();
 
-var port= process.env.PORT  || 4550;
+var port= process.env.PORT  || 4000;
 
 app.listen(port, function(){
     console.log("Site Running on http://localhost:"+port);
