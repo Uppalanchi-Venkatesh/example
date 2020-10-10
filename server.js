@@ -11,6 +11,7 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var mongoose  = require('mongoose');
 var bodyParser = require('body-parser');
+require('dotenv').config();
 
 db.connect(true);
 
@@ -19,18 +20,24 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(flash()); 
 app.use(bodyParser.json())
 app.use(session({
-    secret : 'secret',
+    secret : process.env.SESSION_SECRET,
     resave : true,
     saveUninitialized : true,
     cookie: {
         maxAge: 1000 * 60 * 60 * 24 * 7 
     },
-    cookie: { secure: false },
+    //cookie: { secure: false },
     store : new MongoStore({mongooseConnection : mongoose.connection})
 }));
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+/*app.use((req,res,next)=>{                 //Debugging wheather session and user is being set in the browser
+    console.log("SESSION : "+JSON.stringify(req.session));
+    console.log("USER : "+JSON.stringify(req.user));
+    next();
+});*/
 
 app.use(express.static(__dirname+'/FrontEnd'));
 
@@ -68,14 +75,13 @@ app.get('/register',checkNotAuthenticated, function(req, res){
 
 app.get('/logout', function (req, res){
     req.logOut();
-    res.redirect('/homepage');
+    res.redirect('/login');
 });
 
 app.post('/registeruser',async function(req,res){
     try{
         var hashedPassword = await bcrypt.hash(req.body.password , 10);
         req.body.password = hashedPassword;
-        req.body._id = Date.now();
         RegisterUserLib.createUsers(req.body);
         res.redirect('/login');
     }catch{

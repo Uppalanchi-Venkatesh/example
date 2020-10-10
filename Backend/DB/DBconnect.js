@@ -1,8 +1,9 @@
 var mongoose=require('mongoose');
+
 module.exports={ 
     connect : function(){
         var optionsJSON = {useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true };
-        var connection_string="mongodb+srv://venkat_chintu:Uppalanchi@14@cluster0.a4lxc.mongodb.net/<dbname>?retryWrites=true&w=majority" || process.env.connection_string;
+        var connection_string = process.env.Connection_String;
         mongoose.connect(connection_string, optionsJSON);
 
         var connectionObj = mongoose.connection;
