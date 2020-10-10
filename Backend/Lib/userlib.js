@@ -4,7 +4,7 @@ module.exports={
         var user=new model(userObj);
         user.save();
     },
-    getallusers: function(cb){
+    getAllUsers: function(cb){
         model.find({},function(err,result){
             cb(err,result);
         })
